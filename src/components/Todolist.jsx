@@ -1,6 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-function Todolist({ todos, setTodos, setStatus,filteredTodos }) {
+function Todolist({ todos, setTodos, setStatus, filteredTodos }) {
   const statusHandler = (event) => {
     let innerText = event.target.innerText;
     setStatus(innerText);

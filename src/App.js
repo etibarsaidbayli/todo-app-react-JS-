@@ -2,19 +2,16 @@ import "./App.css";
 import sun from "./assets/img/icon-sun.svg";
 import Form from "./components/Form";
 import Todolist from "./components/Todolist";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 function App() {
-
-
-
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("All");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
-    filterHandler()
-  },[todos,status])
+    filterHandler();
+  }, [todos, status]);
 
   const filterHandler = () => {
     switch (status) {
@@ -54,11 +51,11 @@ function App() {
       </div>
       <div className="section">
         <div className="container">
-          <Todolist 
-          todos={todos} 
-          setTodos={setTodos} 
-          setStatus={setStatus} 
-          filteredTodos={filteredTodos}
+          <Todolist
+            todos={todos}
+            setTodos={setTodos}
+            setStatus={setStatus}
+            filteredTodos={filteredTodos}
           />
         </div>
       </div>

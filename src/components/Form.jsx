@@ -8,6 +8,9 @@ function Form({ newTodo, setNewTodo, todos, setTodos }) {
 
   const submitTodoHandler = (event) => {
     event.preventDefault();
+    if (!newTodo.trim()) {
+      return;
+    }
     setTodos([
       ...todos,
       {

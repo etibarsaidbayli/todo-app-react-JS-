@@ -20,11 +20,14 @@ function TodoItem({ id, text, todos, setTodos, todo }) {
   };
 
   return (
-    <div className={todo.isCompleted  ? "list-box completed" : "list-box"}>
+    <div className={todo.isCompleted ? "list-box completed" : "list-box"}>
       <div className="li-box">
         <div className="form-check li-check">
-          <input defaultChecked={todo.isCompleted}
-           onChange={completedHandler} type="checkbox" />
+          <input
+            defaultChecked={todo.isCompleted}
+            onChange={completedHandler}
+            type="checkbox"
+          />
         </div>
         <li className="list-item">{text}</li>
       </div>
