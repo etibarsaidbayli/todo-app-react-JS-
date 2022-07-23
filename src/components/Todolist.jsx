@@ -1,6 +1,14 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-function Todolist({ todos, setTodos, setStatus, filteredTodos }) {
+function Todolist({
+  todos,
+  setTodos,
+  setStatus,
+  filteredTodos,
+  clearComplted,
+  itemsCount,
+  setItemsCount,
+}) {
   const statusHandler = (event) => {
     let innerText = event.target.innerText;
     setStatus(innerText);
@@ -17,12 +25,14 @@ function Todolist({ todos, setTodos, setStatus, filteredTodos }) {
             id={todo.id}
             todos={todos}
             setTodos={setTodos}
+            itemsCount={itemsCount}
+            setItemsCount={setItemsCount}
           />
         ))}
       </ul>
       <div className="details-box">
         <div className="items-left-box">
-          <span>0</span>
+          <span>{itemsCount}</span>
           <span> items left</span>
         </div>
         <div className="status-box">
@@ -30,7 +40,7 @@ function Todolist({ todos, setTodos, setStatus, filteredTodos }) {
           <span onClick={statusHandler}>Active</span>
           <span onClick={statusHandler}>Completed</span>
         </div>
-        <div className="clear-box">
+        <div onClick={clearComplted} className="clear-box">
           <span>Clear Completed</span>
         </div>
       </div>

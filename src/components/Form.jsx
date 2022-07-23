@@ -1,7 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useRef } from "react";
 
-function Form({ newTodo, setNewTodo, todos, setTodos }) {
+function Form({
+  newTodo,
+  setNewTodo,
+  todos,
+  setTodos,
+  itemsCount,
+  setItemsCount,
+  saveLocalodos,
+  getLocalTodos,
+}) {
+  const checkboxRef = useRef();
+
   function handlerInputChange(event) {
     setNewTodo(event.target.value);
   }
@@ -15,18 +26,22 @@ function Form({ newTodo, setNewTodo, todos, setTodos }) {
       ...todos,
       {
         text: newTodo,
-        isCompleted: false,
+        isCompleted: checkboxRef.current.checked,
         id: Math.floor(Math.random() * 1000),
       },
     ]);
+
     setNewTodo("");
+    checkboxRef.current.checked = false;
+
+    setItemsCount(itemsCount + 1);
   };
 
   return (
     <form autoComplete="off" onSubmit={submitTodoHandler}>
       <div className="form-box">
         <div className="form-check">
-          <input type="checkbox" />
+          <input ref={checkboxRef} type="checkbox" />
         </div>
         <div className="form-text-box">
           <input
