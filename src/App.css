@@ -30,9 +30,7 @@ body {
 
 .container {
   width: 800px;
-
   margin: 0 auto;
-  /* background-color: rgb(67, 67, 53); */
 }
 
 .head {
@@ -193,4 +191,86 @@ body {
 
 .completed {
   opacity: 0.35;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    width: 450px;
+  }
+
+  .list-item {
+    font-size: 15px;
+  }
+  .trashBtn i {
+    font-size: 15px;
+  }
+  .details-box {
+    padding: 0;
+    font-size: 14px;
+  }
+  .form-check-form {
+    width: 45px;
+    padding: 0;
+    margin: 0;
+  }
+  .form-text-box input {
+    padding-left: 5px;
+  }
+  .header-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 450px;
+  }
+
+  .list-item {
+    font-size: 15px;
+  }
+  .trashBtn i {
+    font-size: 15px;
+  }
+  .details-box {
+    padding: 0;
+    font-size: 14px;
+  }
+  .form-check-form {
+    width: 45px;
+    padding: 0;
+    margin: 0;
+  }
+  .form-text-box input {
+    padding-left: 5px;
+  }
+  .header-title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 320px;
+  }
+
+  .list-item {
+    font-size: 10px;
+  }
+  .trashBtn i {
+    font-size: 10px;
+  }
+
+  .details-box {
+    font-size: 10px;
+  }
+  .header-title {
+    font-size: 20px;
+  }
 }

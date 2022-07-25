@@ -36,7 +36,7 @@ function Form({
   return (
     <form autoComplete="off" onSubmit={submitTodoHandler}>
       <div className="form-box">
-        <div className="form-check">
+        <div className="form-check form-check-form">
           <input ref={checkboxRef} type="checkbox" />
         </div>
         <div className="form-text-box">
