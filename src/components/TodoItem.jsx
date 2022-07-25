@@ -1,19 +1,8 @@
 import React from "react";
 
-function TodoItem({
-  id,
-  text,
-  todos,
-  setTodos,
-  todo,
-  itemsCount,
-  setItemsCount,
-}) {
+function TodoItem({ id, text, todos, setTodos, todo }) {
   const deleteHandler = () => {
     setTodos(todos.filter((item) => item.id !== todo.id));
-    if (!todo.isCompleted) {
-      setItemsCount(itemsCount - 1);
-    }
   };
 
   const completedHandler = () => {
@@ -28,11 +17,6 @@ function TodoItem({
         return item;
       })
     );
-    if (todo.isCompleted) {
-      setItemsCount(itemsCount + 1);
-    } else {
-      setItemsCount(itemsCount - 1);
-    }
   };
 
   return (

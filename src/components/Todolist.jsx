@@ -6,8 +6,6 @@ function Todolist({
   setStatus,
   filteredTodos,
   clearComplted,
-  itemsCount,
-  setItemsCount,
 }) {
   const statusHandler = (event) => {
     let innerText = event.target.innerText;
@@ -25,14 +23,12 @@ function Todolist({
             id={todo.id}
             todos={todos}
             setTodos={setTodos}
-            itemsCount={itemsCount}
-            setItemsCount={setItemsCount}
           />
         ))}
       </ul>
       <div className="details-box">
         <div className="items-left-box">
-          <span>{itemsCount}</span>
+          <span>{todos.filter((a) => a.isCompleted === false).length}</span>
           <span> items left</span>
         </div>
         <div className="status-box">

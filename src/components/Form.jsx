@@ -6,8 +6,6 @@ function Form({
   setNewTodo,
   todos,
   setTodos,
-  itemsCount,
-  setItemsCount,
   saveLocalodos,
   getLocalTodos,
 }) {
@@ -33,8 +31,6 @@ function Form({
 
     setNewTodo("");
     checkboxRef.current.checked = false;
-
-    setItemsCount(itemsCount + 1);
   };
 
   return (
